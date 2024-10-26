@@ -1,38 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dark Elf PWA">
-  <title>Dark Elf</title>
+  <title>Dark Elf PWA</title>
 
   <!-- Link to the manifest file -->
   <link rel="manifest" href="manifest.json">
 
-  <!-- Optional: Add some CSS for basic styling -->
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
     }
-    h1 {
-      color: #333;
+
+    header {
+      padding: 20px;
+    }
+
+    header img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    nav img {
+      margin: 10px;
+      cursor: pointer;
+      width: 200px;
+      height: auto;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to Dark Elf PWA</h1>
-  <p>This is a Progressive Web App!</p>
+  <!-- Logo -->
+  <header>
+    <img src="path_to_logo.png" alt="Dark Elf Logo">
+  </header>
 
-  <!-- Optional: Add your content here, such as a link to your game -->
-  <a href="https://www.darkelf.cz/index.asp?l=0&v=">Go to Dark Elf Game</a>
+  <!-- Menu -->
+  <nav>
+    <a href="https://www.darkelf.cz/index.asp?l=0&v=">
+      <img src="path_to_vstoupit_button.png" alt="Vstoupit">
+    </a>
+    <a href="https://www.darkelf.cz/registration">
+      <img src="path_to_registrace_button.png" alt="Registrace">
+    </a>
+    <a href="https://www.darkelf.cz/story">
+      <img src="path_to_uvodni_pribeh_button.png" alt="Úvodní příběh">
+    </a>
+    <a href="https://www.darkelf.cz/map">
+      <img src="path_to_mapa_světa_button.png" alt="Mapa světa">
+    </a>
+    <a href="https://www.darkelf.cz/help">
+      <img src="path_to_napoveda_button.png" alt="Nápověda">
+    </a>
+  </nav>
+
+  <!-- Main content (optional) -->
+  <div class="container">
+    <p>Dark Elf je online strategie ze světa Pána Prstenů. Jedinečnost této webhry je v obrovné mapě...</p>
+  </div>
 
   <!-- Register service worker -->
   <script>

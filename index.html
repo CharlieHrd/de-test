@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dark Elf PWA">
+  <title>Dark Elf</title>
+
+  <!-- Link to the manifest file -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Optional: Add some CSS for basic styling -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Dark Elf PWA</h1>
+  <p>This is a Progressive Web App!</p>
+
+  <!-- Optional: Add your content here, such as a link to your game -->
+  <a href="https://www.darkelf.cz/index.asp?l=0&v=">Go to Dark Elf Game</a>
+
+  <!-- Register service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(function(error) {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+
+</body>
+</html>

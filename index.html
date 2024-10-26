@@ -15,82 +15,62 @@
       background-color: black;
       color: white;
       font-family: 'Arial', sans-serif;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      background-image: url('path_to_background_image.png'); /* Tady můžeš přidat vlastní pozadí */
+      background-size: cover;
+      background-position: center;
     }
 
-    table {
+    .container {
       text-align: center;
-      border-collapse: collapse;
-    }
-
-    td {
-      padding: 10px;
-      vertical-align: middle;
-    }
-
-    img {
-      width: 200px; /* Adjust width of buttons */
-      height: auto;
     }
 
     .logo {
       width: 400px; /* Adjust width of the logo */
       height: auto;
+      margin-bottom: 20px;
     }
 
-    .menu-buttons img {
+    .menu img {
       margin: 10px;
       cursor: pointer;
+      width: 200px;
+      height: auto;
     }
   </style>
 </head>
 <body>
 
-  <!-- Create a table layout -->
-  <table>
-    <tr>
-      <!-- Logo -->
-      <td colspan="3">
-        <img class="logo" src="path_to_logo.png" alt="Dark Elf Logo">
-      </td>
-    </tr>
-    <tr class="menu-buttons">
-      <!-- Menu Buttons in a row -->
-      <td>
-        <a href="https://www.darkelf.cz/index.asp?l=0&v=">
-          <img src="path_to_vstoupit_button.png" alt="Vstoupit">
-        </a>
-      </td>
-      <td>
-        <a href="https://www.darkelf.cz/registration">
-          <img src="path_to_registrace_button.png" alt="Registrace">
-        </a>
-      </td>
-      <td>
-        <a href="https://www.darkelf.cz/story">
-          <img src="path_to_uvodni_pribeh_button.png" alt="Úvodní příběh">
-        </a>
-      </td>
-    </tr>
-    <tr class="menu-buttons">
-      <td>
-        <a href="https://www.darkelf.cz/map">
-          <img src="path_to_mapa_světa_button.png" alt="Mapa světa">
-        </a>
-      </td>
-      <td>
-        <a href="https://www.darkelf.cz/help">
-          <img src="path_to_napoveda_button.png" alt="Nápověda">
-        </a>
-      </td>
-      <td>
-        <!-- You can leave this cell empty or add something here -->
-      </td>
-    </tr>
-  </table>
+  <div class="container">
+    <!-- Logo -->
+    <img class="logo" src="path_to_logo.png" alt="Dark Elf Logo">
+    
+    <!-- Menu -->
+    <div class="menu">
+      <a href="https://www.darkelf.cz/index.asp?l=0&v=">
+        <img src="path_to_vstoupit_button.png" alt="Vstoupit">
+      </a>
+      <br>
+      <a href="https://www.darkelf.cz/registration">
+        <img src="path_to_registrace_button.png" alt="Registrace">
+      </a>
+      <br>
+      <a href="https://www.darkelf.cz/story">
+        <img src="path_to_uvodni_pribeh_button.png" alt="Úvodní příběh">
+      </a>
+      <br>
+      <a href="https://www.darkelf.cz/map">
+        <img src="path_to_mapa_světa_button.png" alt="Mapa světa">
+      </a>
+      <br>
+      <a href="https://www.darkelf.cz/help">
+        <img src="path_to_napoveda_button.png" alt="Nápověda">
+      </a>
+    </div>
+  </div>
 
   <!-- Register service worker -->
   <script>

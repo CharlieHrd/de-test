@@ -3,86 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Elf PWA</title>
-
-  <!-- Link to the manifest file -->
-  <link rel="manifest" href="manifest.json">
+  <title>Dark Elf Mobile</title>
 
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: black;
-      color: white;
-      font-family: 'Arial', sans-serif;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-image: url('path_to_background_image.png'); /* Tady můžeš přidat vlastní pozadí */
-      background-size: cover;
-      background-position: center;
+      background-color: black;
+      color: white;
     }
 
-    .container {
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Zabere celou výšku okna */
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Přidáme logo a menu nad iframe */
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
       text-align: center;
+      z-index: 1000;
+      padding: 10px 0;
+      background-color: rgba(0, 0, 0, 0.7); /* Poloprůhledné pozadí */
     }
 
-    .logo {
-      width: 400px; /* Adjust width of the logo */
+    header img {
+      max-width: 150px; /* Logo můžeš přizpůsobit */
       height: auto;
-      margin-bottom: 20px;
     }
 
-    .menu img {
-      margin: 10px;
-      cursor: pointer;
-      width: 200px;
-      height: auto;
+    .menu {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
     }
+
+    .menu a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Logo -->
-    <img class="logo" src="path_to_logo.png" alt="Dark Elf Logo">
-    
-    <!-- Menu -->
+  <!-- Přidáme logo a jednoduché menu -->
+  <header>
+    <img src="path_to_logo.png" alt="Dark Elf Logo">
     <div class="menu">
-      <a href="https://www.darkelf.cz/index.asp?l=0&v=">
-        <img src="path_to_vstoupit_button.png" alt="Vstoupit">
-      </a>
-      <br>
-      <a href="https://www.darkelf.cz/registration">
-        <img src="path_to_registrace_button.png" alt="Registrace">
-      </a>
-      <br>
-      <a href="https://www.darkelf.cz/story">
-        <img src="path_to_uvodni_pribeh_button.png" alt="Úvodní příběh">
-      </a>
-      <br>
-      <a href="https://www.darkelf.cz/map">
-        <img src="path_to_mapa_světa_button.png" alt="Mapa světa">
-      </a>
-      <br>
-      <a href="https://www.darkelf.cz/help">
-        <img src="path_to_napoveda_button.png" alt="Nápověda">
-      </a>
+      <a href="https://www.darkelf.cz/index.asp?l=0&v=">Vstoupit</a>
+      <a href="https://www.darkelf.cz/registration">Registrace</a>
+      <a href="https://www.darkelf.cz/story">Úvodní příběh</a>
+      <a href="https://www.darkelf.cz/map">Mapa světa</a>
+      <a href="https://www.darkelf.cz/help">Nápověda</a>
     </div>
-  </div>
+  </header>
 
-  <!-- Register service worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(function(registration) {
-          console.log('Service Worker registered with scope:', registration.scope);
-        }).catch(function(error) {
-          console.log('Service Worker registration failed:', error);
-        });
-    }
-  </script>
+  <!-- Hlavní iframe, kde se zobrazí hra -->
+  <div class="iframe-container">
+    <iframe src="https://www.darkelf.cz/index.asp?l=0&v=" title="Dark Elf"></iframe>
+  </div>
 
 </body>
 </html>

@@ -6,79 +6,33 @@
   <title>Dark Elf Mobile</title>
 
   <style>
-    body {
+    body, html {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: black;
-      color: white;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Skryj scrollbar, aby bylo více místa pro hru */
     }
 
     .iframe-container {
       position: relative;
       width: 100%;
-      height: 100vh; /* Zabere celou výšku okna */
+      height: 100%;
     }
 
     iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
     }
-
-    /* Přidáme logo a menu nad iframe */
-    header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      text-align: center;
-      z-index: 1000;
-      padding: 10px 0;
-      background-color: rgba(0, 0, 0, 0.7); /* Poloprůhledné pozadí */
-    }
-
-    header img {
-      max-width: 150px; /* Logo můžeš přizpůsobit */
-      height: auto;
-    }
-
-    .menu {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    .menu a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    .menu a:hover {
-      text-decoration: underline;
-    }
-
   </style>
 </head>
 <body>
 
-  <!-- Přidáme logo a jednoduché menu -->
-  <header>
-    <img src="path_to_logo.png" alt="Dark Elf Logo">
-    <div class="menu">
-      <a href="https://www.darkelf.cz/index.asp?l=0&v=">Vstoupit</a>
-      <a href="https://www.darkelf.cz/registration">Registrace</a>
-      <a href="https://www.darkelf.cz/story">Úvodní příběh</a>
-      <a href="https://www.darkelf.cz/map">Mapa světa</a>
-      <a href="https://www.darkelf.cz/help">Nápověda</a>
-    </div>
-  </header>
-
-  <!-- Hlavní iframe, kde se zobrazí hra -->
+  <!-- Iframe that loads the Dark Elf game -->
   <div class="iframe-container">
     <iframe src="https://www.darkelf.cz/index.asp?l=0&v=" title="Dark Elf"></iframe>
   </div>
